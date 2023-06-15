@@ -11,7 +11,7 @@ function Categories () {
     const getCategories = async (e) => {
         await axios.get(`${url}/products/categories`)
         .then(res => {
-            console.log('new categories =', res);
+            console.log('new categories =', res.data);
             setCategories(res.data)
         }).catch (err => toast.error(err.message))
     }

@@ -12,7 +12,7 @@ function Create(props) {
     description: ''
   })
 
-  const naviage = useNavigate() // used for redirection path inside logics
+  const navigate = useNavigate() // used for redirection path inside logics
 
   const readValue = (e) => {
     const {name, value} = e.target;
@@ -27,7 +27,7 @@ function Create(props) {
        await axios.post(`${url}/products/add`, product)
        .then(res => {
         toast.success('New Product Added Successfully')
-        naviage(`/`)
+        navigate(`/`)
        }) .catch(err => toast.error (err.message))
     } catch (err) {
       toast.error(err.message)
